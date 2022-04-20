@@ -10,6 +10,7 @@ import About from '../pages/About';
 import Login from '../pages/Login';
 import { ProtectedRoutes, PublicRoutes } from './ProtectedRoutes';
 import Register from '../pages/Register';
+import Goals from '../pages/Goals';
 
 export function AppRoutes(){
     return(
@@ -17,6 +18,7 @@ export function AppRoutes(){
             <Route path="/" element={<ProtectedRoutes/>}>
                 <Route path="/home" element={<Home />} />
                 <Route path="/about" element={<About />} />
+                <Route path="/goals" element={<Goals />} />
             </Route>
             <Route path="/" element={<PublicRoutes />}>
                 <Route path="/login" element={<Login />} />
