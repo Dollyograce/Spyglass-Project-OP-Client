@@ -2,10 +2,10 @@ import {getAuth} from 'firebase/auth';
 
 const auth = getAuth();
 
-/*auth.onAuthStateChanged((user)=> {
+auth.onAuthStateChanged((user)=> {
     const authToken = user.accessToken;
     sessionStorage.setItem("accessToken", authToken);
-});*/
+});
 
 export default function setupAxios(axios) {
     axios.interceptors.request.use(async config => {
