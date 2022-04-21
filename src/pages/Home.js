@@ -2,6 +2,7 @@ import axios from 'axios';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+
 function Home(){
     const navigate = useNavigate();
     const logMeOut = () => {
@@ -10,10 +11,11 @@ function Home(){
     }
 
     useEffect(()=>{
-        axios.get("http://localhost:8080/me")
+       // axios.get("http://localhost:8080/me")
     },[])
     return(<>
         <h1>Home</h1>
+        
         <button onClick={logMeOut}>Log Out</button>
     </>);
 }

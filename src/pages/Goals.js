@@ -30,5 +30,6 @@ export default function VacationGoalCard() {
         </Button>
       </CardActions>
     </Card>
+    
   );
 }
