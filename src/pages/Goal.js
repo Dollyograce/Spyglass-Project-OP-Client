@@ -14,6 +14,15 @@ import { Toolbar } from '@mui/material';
 import { IconButton } from '@mui/material';
 import Theme from './Theme';
 import { ThemeProvider } from '@emotion/react';
+import { useNavigate } from 'react-router-dom';
+import Box from '@mui/material/Box';
+import Fab from '@mui/material/Fab';
+import PersonIcon from '@mui/icons-material/Person';
+import BeachAccessIcon from '@mui/icons-material/BeachAccess';
+import SchoolIcon from '@mui/icons-material/School';
+import WorkIcon from '@mui/icons-material/Work';
+import LightbulbIcon from '@mui/icons-material/Lightbulb';
+import logo from '../components/Spyglass-logos_transparent.png';
 
 
 
@@ -65,7 +74,8 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-export default function VacationGoalCard() {
+export default function FloatingActionButtonExtendedSize()  {
+  const navigate = useNavigate();
   const [anchorEl, setAnchorEl] = useState([]);
 const handleOpenMenu = e => {
     setAnchorEl(e.currentTarget);
@@ -134,29 +144,42 @@ const handleMenuClose = () =>{
      </div>
      
    <div>
-    <Card sx={{ maxWidth: 345 }}>
-      <CardActionArea>
-        <CardMedia
-          component="img"
-          height="140"
-          image="https://www.pngitem.com/pimgs/m/407-4070149_visitor-travel-vacation-white-icon-png-transparent-png.png"
-          alt="Vacation"
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-            Vacation 
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
+   <><img src={logo} height="250px" className="logo" alt=""></img><><h1>Welcome, Username!
+    </h1>
+      <h2>What are your current savings goals?</h2>
+      <Box sx={{ '& > :not(style)': { m: 1 } }}>
+        <div className='col-12'>
+          <Fab variant="extended" color="primary" aria-label="add" onClick={() => navigate("/create")}>
+            <BeachAccessIcon sx={{ mr: 1 }} />
             Vacation
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-      <CardActions>
-        <Button size="small" color="primary">
-          Share
-        </Button>
-      </CardActions>
-    </Card>
+          </Fab>
+        </div>
+        <div className='col-12'>
+          <Fab variant="extended" color="primary" aria-label="add" onClick={() => navigate("/create")}>
+            <WorkIcon sx={{ mr: 1 }} />
+            Business
+          </Fab>
+        </div>
+        <div className='col-12'>
+          <Fab variant="extended" color="primary" aria-label="add" onClick={() => navigate("/create")}>
+            <PersonIcon sx={{ mr: 1 }} />
+            Personal
+          </Fab>
+        </div>
+        <div className='col-12'>
+          <Fab variant="extended" color="primary" aria-label="add" onClick={() => navigate("/create")}>
+            <SchoolIcon sx={{ mr: 1 }} />
+            Education
+          </Fab>
+        </div>
+        <div className='col-12'>
+          <Fab variant="extended" color="primary" aria-label="add" onClick={() => navigate("/create")}>
+            <LightbulbIcon sx={{ mr: 1 }} />
+            Custom Goal
+          </Fab>
+        </div>
+      </Box></></>
+  );
   </div>
     </Container>
     
