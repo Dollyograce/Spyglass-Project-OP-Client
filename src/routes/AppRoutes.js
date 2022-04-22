@@ -12,6 +12,7 @@ import { ProtectedRoutes, PublicRoutes } from './ProtectedRoutes';
 import Register from '../pages/Register';
 import Goals from '../pages/Goals';
 import CreateArea from '../pages/CreateArea';
+import Note from '../pages/Note';
 
 export function AppRoutes(){
     return(
@@ -21,6 +22,7 @@ export function AppRoutes(){
                 <Route path="/about" element={<About />} />
                 <Route path="/goals" element={<Goals />} />
                 <Route path="/create" element={<CreateArea />} />
+                <Route path="/notes" element={<Note />} />
             </Route>
             <Route path="/" element={<PublicRoutes />}>
                 <Route path="/login" element={<Login />} />
