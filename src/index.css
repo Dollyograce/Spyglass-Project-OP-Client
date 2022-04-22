@@ -7,6 +7,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-image: url("./components/lightbackground.jpeg");
   background-size: 1450px;
+  
 }
 
 code {
