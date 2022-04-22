@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-
 import { IoIosAdd } from "react-icons/io";
+import { Button } from "@mui/material";
+import { TextField } from "@mui/material";
 
 function CreateArea({ onAdd }) {
   const [isExpanded, setExpanded] = useState(false);
@@ -9,6 +10,7 @@ function CreateArea({ onAdd }) {
     title: "",
     content: "",
     amountSaved: "",
+    startDate: "",
     savingsDateGoal: "",
   });
 
@@ -38,63 +40,80 @@ function CreateArea({ onAdd }) {
 
   return (
     <div>
-      <form>
         {isExpanded && (
           <div>
-          <input
+          <TextField 
             value={note.title}
             type="text"
             placeholder="Title"
             name="title"
             onChange={handleChange}
+            focused
           />
           </div>
         )}
         {isExpanded && (
           <div>
-          <input
+          <TextField
+            sx={{borderColor:"red"}}
             value={note.targetAmount}
             type="text"
             placeholder="Target Savings Amount"
             name="targetAmount"
             onChange={handleChange}
+            focused
           />
           </div>
         )}
         {isExpanded && (
           <div>
-          <input
+          <TextField
             value={note.amountSaved}
             type="text"
             placeholder="Amount Saved"
             name="amountSaved"
             onChange={handleChange}
+            focused
           />
            </div>
-        )}
-        {isExpanded && (
-          <input
-            value={note.savingsDateGoal}
-            type="text"
-            placeholder="Savings Date Goal"
-            name="savingsDateGoal"
-            onChange={handleChange}
-          />
-        )}
+          )}
+          {isExpanded && (
+            <div>
+            <TextField
+              value={note.startDate}
+              type="text"
+              placeholder="Goal Start Date"
+              name="startDate"
+              onChange={handleChange}
+              focused
+            />
+            </div>
+          )}
+          {isExpanded && (
+            <TextField
+              value={note.savingsDateGoal}
+              type="text"
+              placeholder="Goal End Date"
+              name="savingsDateGoal"
+              onChange={handleChange}
+              focused
+            />
+          )}
+
         <p>
-          <textarea
+          <TextField
             value={note.content}
             onClick={handleExpanded}
             name="content"
             placeholder="Create a goal..."
             onChange={handleChange}
             rows={isExpanded ? 3 : 1}
-          ></textarea>
+            focused
+          ></TextField>
         </p>
-        <button onClick={submitButton}>
+        <Button variant="contained" onClick={submitButton}>
           <IoIosAdd size={35} />
-        </button>
-      </form>
+        </Button>
     </div>
   );
 }
