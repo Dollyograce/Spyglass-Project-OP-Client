@@ -62,6 +62,7 @@ const Search = styled('div')(({ theme }) => ({
   
 
 
+
 function Home(){
     const navigate = useNavigate();
     const [anchorEl, setAnchorEl] = useState(null);
@@ -80,7 +81,7 @@ function Home(){
 
    
     useEffect(()=>{
-        axios.get("http://localhost:8080/me")
+       // axios.get("http://localhost:8080/me")
     },[])
     return(
     <Container maxWidth= "100%"> 
@@ -135,6 +136,7 @@ function Home(){
     </Container>);
 
     
+
 
 
 }
