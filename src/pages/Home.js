@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { styled, alpha } from '@mui/material/styles';
 import React from 'react';
-import { AppBar, Container, Menu, MenuItem, Typography } from '@mui/material';
+import { AppBar, Container, Grid, Menu, MenuItem, Typography } from '@mui/material';
 import { Toolbar } from '@mui/material';
 import { IconButton } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -13,7 +13,11 @@ import SearchIcon from '@mui/icons-material/Search';
 import InputBase from '@mui/material/InputBase';
 import { ThemeProvider } from '@emotion/react';
 import Theme from './Theme';
-import { format, formatDistance, formatRelative, subDays } from 'date-fns'
+import { format } from 'date-fns'
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import { CardActionArea } from '@mui/material';
 
 
 const Search = styled('div')(({ theme }) => ({
@@ -90,35 +94,41 @@ function Home(){
             <AppBar position='fixed'>
                 <Toolbar>
                     <ThemeProvider theme={Theme}>
-                        <IconButton
-                        aria-controls='menu'
-                        onMouseOver={handleOpenMenu}
-                        size="large"
-                        edge="start"
-                        color="inherit"
-                        aria-label="open drawer"
-                        sx={{ mr: 2 }}>
-                            <MenuIcon>
-                                </MenuIcon>
-                        </IconButton>
-                    </ThemeProvider>
-                    <Typography >
-                    Today is the { format(new Date(), 'do MMMM Y') }
-                    </Typography>
-                    <Typography 
-                    variant='h6'
-                    position={'center'}>
-                        Spyglass
-                        <Search position ='right'>
-                            <SearchIconWrapper >
-                                <SearchIcon/>
-                        </SearchIconWrapper>
-                        <StyledInputBase
-                        placeholder="Search..."
-                        inputProps={{ 'aria-label' : 'search'}}
-                        />
-                        </Search>
-                    </Typography>
+                            <IconButton
+                            aria-controls='menu'
+                            onMouseOver={handleOpenMenu}
+                            size="large"
+                            edge="start"
+                            color="inherit"
+                            aria-label="open drawer"
+                            sx={{ mr: 2 }}>
+                                <MenuIcon>
+                                    </MenuIcon>
+                            </IconButton>
+                        </ThemeProvider>
+                        
+                        <Typography >
+                        Today's Date { format(new Date(), 'do MMMM Y') }
+                        </Typography>
+                        <Grid container justifyContent='center'>
+                        <Typography 
+                        variant='h6'
+                        >
+                            Welcome To Spyglass
+                        
+                        </Typography>
+                        </Grid>
+                        <Grid>
+                        <Search >
+                                <SearchIconWrapper >
+                                    <SearchIcon/>
+                            </SearchIconWrapper>
+                            <StyledInputBase
+                            placeholder="Search..."
+                            inputProps={{ 'aria-label' : 'search'}}
+                            />
+                            </Search>
+                        </Grid>
                 </Toolbar>
             </AppBar>
             <Menu 
@@ -136,6 +146,25 @@ function Home(){
             </Menu>
         </header>
      </div>
+     <Card sx={{ maxWidth: 345 }}>
+      <CardActionArea>
+        <CardMedia
+          component="img"
+          height="140"
+          image="/static/images/cards/contemplative-reptile.jpg"
+          alt="green iguana"
+        />
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="div">
+            Lizard
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            Lizards are a widespread group of squamate reptiles, with over 6,000
+            species, ranging across all continents except Antarctica
+          </Typography>
+        </CardContent>
+      </CardActionArea>
+    </Card>
     </Container>);
 
     
