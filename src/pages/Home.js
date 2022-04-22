@@ -13,7 +13,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import InputBase from '@mui/material/InputBase';
 import { ThemeProvider } from '@emotion/react';
 import Theme from './Theme';
-
+import { format, formatDistance, formatRelative, subDays } from 'date-fns'
 
 
 const Search = styled('div')(({ theme }) => ({
@@ -102,6 +102,9 @@ function Home(){
                                 </MenuIcon>
                         </IconButton>
                     </ThemeProvider>
+                    <Typography >
+                    Today is the { format(new Date(), 'do MMMM Y') }
+                    </Typography>
                     <Typography 
                     variant='h6'
                     position={'center'}>

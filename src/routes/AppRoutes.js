@@ -10,7 +10,7 @@ import About from '../pages/About';
 import Login from '../pages/Login';
 import { ProtectedRoutes, PublicRoutes } from './ProtectedRoutes';
 import Register from '../pages/Register';
-import Goals from '../pages/Goals';
+import Goals from '../pages/Goal';
 import CreateArea from '../pages/CreateArea';
 
 export function AppRoutes(){
