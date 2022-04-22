@@ -40,6 +40,7 @@ function CreateArea({ onAdd }) {
 
   return (
     <div>
+      <form>
         {isExpanded && (
           <div>
           <TextField 
@@ -114,6 +115,7 @@ function CreateArea({ onAdd }) {
         <Button variant="contained" onClick={submitButton}>
           <IoIosAdd size={35} />
         </Button>
+        </form>
     </div>
   );
 }
