@@ -18,6 +18,11 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import { CardActionArea } from '@mui/material';
+import ProgressBar from '../components/ProgressBar';
+import Paper from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import CardActions from '@mui/material/CardActions';
+
 
 
 const Search = styled('div')(({ theme }) => ({
@@ -146,25 +151,39 @@ function Home(){
             </Menu>
         </header>
      </div>
-     <Card sx={{ maxWidth: 345 }}>
+     <div>
+     <Grid Container spacing ={2} direction="column" alighItems="center" justify="center" style={{ minHeight: '100vh' }}>
+         <Grid item xs={2}>
+     <Card sx={{ maxWidth: 250 }}>
       <CardActionArea>
         <CardMedia
           component="img"
           height="140"
-          image="/static/images/cards/contemplative-reptile.jpg"
-          alt="green iguana"
+          image="http://cdn.sandals.com/sandals/v12/images/resorts/smb/home/main-slider/couple-and-beach.jpg"
+          alt="jamaica"
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            Lizard
+            Going to Jamaica
+            <ProgressBar></ProgressBar>
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
+            <p>Target Saving Amount: $1000</p>
+            <p>Amount Saved: $100</p>
+            <p>Target Goal Date: 09/01/2022</p>
+      
           </Typography>
+
         </CardContent>
+        <CardActions>
+        <Button size="small">Edit Goal</Button>
+        <Button size="small">Delete Goal</Button>
+      </CardActions>
       </CardActionArea>
     </Card>
+    </Grid>
+    </Grid>
+    </div>
     </Container>);
 
     

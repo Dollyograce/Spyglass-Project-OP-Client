@@ -14,7 +14,6 @@ import { Toolbar } from '@mui/material';
 import { IconButton } from '@mui/material';
 import Theme from './Theme';
 import { ThemeProvider } from '@emotion/react';
-import { useNavigate } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import Fab from '@mui/material/Fab';
 import PersonIcon from '@mui/icons-material/Person';
@@ -180,7 +179,7 @@ const handleMenuClose = () =>{
           </Fab>
         </div>
       </Box></></>
-  );
+  
   </div>
     </Container>
     
