@@ -8,6 +8,7 @@ import MenuItem from '@mui/material/MenuItem';
 import PopupState, { bindTrigger, bindMenu } from 'material-ui-popup-state';
 
 
+
 function Home(){
     const navigate = useNavigate();
     const logMeOut = () => {
@@ -30,7 +31,7 @@ function Home(){
             <Menu {...bindMenu(popupState)}>
               <MenuItem onClick={popupState.close}>Profile</MenuItem>
               <MenuItem onClick={popupState.close}>My account</MenuItem>
-              <MenuItem onClick={popupState.close}>Directions</MenuItem>
+              <MenuItem onClick={popupState.close}>Jasmine Sullivan</MenuItem>
             </Menu>
           </React.Fragment>
         )}
