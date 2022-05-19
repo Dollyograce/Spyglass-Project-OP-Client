@@ -5,6 +5,7 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import { useState } from 'react';
 import {getAuth, signInWithEmailAndPassword} from 'firebase/auth';
+import logo from '../components/Spyglass-logos_transparent.png';
 
 function Login(){
     const navigate = useNavigate();
@@ -23,6 +24,8 @@ function Login(){
 
     return(
         <div>
+   <img src={logo} height="250px" className="logo" alt=""></img>
+      
             <div className="heading-container">
                 <h3>
                     Login Form
@@ -53,7 +56,9 @@ function Login(){
 
             <Button variant="contained" onClick={logMeIn}>Log In</Button>
             
+            <p>Forgot User ID/Password?</p>
         </div>
+        
     )
 }
 

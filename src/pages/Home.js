@@ -151,10 +151,11 @@ function Home(){
             </Menu>
         </header>
      </div>
-     <div>
-     <Grid Container spacing ={2} direction="column" alighItems="center" justify="center" style={{ minHeight: '100vh' }}>
-         <Grid item xs={2}>
-     <Card sx={{ maxWidth: 250 }}>
+     
+
+     <Grid Container spacing ={2} rowSpacing={2} columnSpacing={{ md: 3 }}direction="row" alignItems="center" justifyContent="center" style={{ minHeight: '25vh' }}>
+         <Grid item lg={6}>
+     <Card sx={{ maxWidth: 345 }}>
       <CardActionArea>
         <CardMedia
           component="img"
@@ -181,10 +182,19 @@ function Home(){
       </CardActions>
       </CardActionArea>
     </Card>
+
+    
     </Grid>
     </Grid>
-    </div>
+    
+   
+
+    
+    
+    
     </Container>);
+
+    
 
     
 

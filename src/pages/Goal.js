@@ -27,11 +27,6 @@ import { useNavigate } from 'react-router-dom';
 
 
 
-
-
-
-
-
 const Search = styled('div')(({ theme }) => ({
   position: 'sticky',
   alignItems: 'right',
